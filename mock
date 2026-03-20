@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Level Stone | Architectural Concrete</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#1b1c1a",
+                        "surface-container": "#efeeea",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-tertiary-fixed-variant": "#48473f",
+                        "on-surface": "#1b1c1a",
+                        "tertiary": "#000000",
+                        "surface-container-high": "#e9e8e4",
+                        "outline": "#747878",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2df",
+                        "on-tertiary-container": "#86847a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface-dim": "#dbdad6",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#1c1c15",
+                        "inverse-on-surface": "#f2f1ed",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary": "#775a19",
+                        "secondary-container": "#fed488",
+                        "outline-variant": "#c4c7c7",
+                        "inverse-surface": "#2f312e",
+                        "surface": "#faf9f5",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-variant": "#e3e2df",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e6e2d7",
+                        "on-tertiary-fixed": "#1c1c15",
+                        "on-secondary-container": "#785a1a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#1c1b1b",
+                        "surface-tint": "#5f5e5e",
+                        "surface-bright": "#faf9f5",
+                        "tertiary-fixed-dim": "#cac6bc",
+                        "primary": "#1a1a1a",
+                        "on-primary-container": "#858383",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-low": "#f4f4f0",
+                        "on-primary": "#ffffff",
+                        "background": "#faf9f5"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"],
+                        "serif": ["Newsreader", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #faf9f5;
+            color: #1b1c1a;
+        }
+
+        .font-serif {
+            font-family: 'Newsreader', serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+
+    <!-- React and Router dependencies -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-secondary selection:text-on-secondary">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+        // --- Components ---
+
+        const TopNav = () => {
+            const location = useLocation();
+
+            const getLinkClass = (path) => {
+                const baseClass = "font-serif text-lg tracking-tight transition-colors duration-400 ";
+                return location.pathname === path
+                    ? baseClass + "text-black border-b border-black pb-1"
+                    : baseClass + "text-stone-500 hover:text-black";
+            };
+
+            return (
+                <nav className="fixed top-0 w-full z-50 bg-[#faf9f5]/80 backdrop-blur-xl border-b border-stone-200/30 flex justify-between items-center px-6 md:px-12 py-6 max-w-full mx-auto">
+                    <Link to="/" className="font-serif italic text-2xl text-black tracking-widest uppercase">LEVEL STONE</Link>
+                    <div className="hidden md:flex gap-12 items-center">
+                        <Link className={getLinkClass("/")} to="/">Home</Link>
+                        <Link className={getLinkClass("/gallery")} to="/gallery">The Gallery</Link>
+                        <Link className={getLinkClass("/artistry")} to="/artistry">Our Artistry</Link>
+                        <Link className={getLinkClass("/inquiries")} to="/inquiries">Inquiries</Link>
+                    </div>
+                    <Link to="/inquiries" className="bg-primary text-on-primary px-8 py-3 text-xs tracking-[0.2em] uppercase font-label hover:opacity-90 transition-opacity duration-400 rounded-lg">
+                        Consultations
+                    </Link>
+                </nav>
+            );
+        };
+
+        const Footer = () => (
+            <footer className="w-full py-16 bg-[#faf9f5] flex flex-col items-center justify-center gap-8 px-8 border-t border-stone-200/30">
+                <Link to="/" className="font-serif italic text-3xl text-black mb-4">Level Stone</Link>
+                <div className="flex gap-8 md:gap-16 flex-wrap justify-center">
+                    <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" to="/gallery">The Gallery</Link>
+                    <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" to="/artistry">Our Artistry</Link>
+                    <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" to="/inquiries">Inquiries</Link>
+                    <a className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="#">Privacy</a>
+                </div>
+                <div className="text-[0.6rem] tracking-[0.3em] uppercase text-stone-400 mt-8">© LEVEL STONE. CRAFTED FOR THE DISCERNING.</div>
+            </footer>
+        );
+
+        // --- Screens ---
+
+        // Screen 4 -> Home
+        const HomePage = () => {
+            return (
+                <div className="pt-32">
+                    {/* Hero Section */}
+                    <section className="relative h-[calc(100vh-8rem)] flex items-center justify-center overflow-hidden mb-24 rounded-lg mx-6 md:mx-12">
+                        <div className="absolute inset-0 z-0">
+                            <img alt="Luxury polished concrete flooring" className="w-full h-full object-cover" data-alt="Seamless polished concrete floor in a minimalist modern architectural space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeHAo2FNMt3LUP6lYBi_9egzpQfevO0WK451cx1eVPY-WaqmMMTpcSI0Am8QQGWOzbinRBjS1Ewrvp44sFNDtg5_YNs_ApIZ0C36tVKcY5oIh1XltbPaPJnZnNerxlXwpb-6VRicxNF4PaGQgtNlDreY9YO5aRcvfTnZVpmgI3C5Es-LtoFACuEYWtYoWGuM-cuQ8iGfdb5rIdUBTPE7ptIrWdri-SwHs90-pdxVEm9qYyqR2KnxOEYO6jGeyAGT2dDBOnJjHzfmqC" />
+                            <div className="absolute inset-0 bg-black/30"></div>
+                        </div>
+                        <div className="relative z-10 text-center max-w-4xl px-6">
+                            <h1 className="font-serif text-7xl md:text-9xl font-light italic leading-tight text-white drop-shadow-sm">
+                                Flooring as Art.
+                            </h1>
+                            <p className="mt-8 font-body text-lg md:text-xl text-white/90 tracking-wide font-light max-w-2xl mx-auto">
+                                Transforming raw architectural elements into seamless, high-performance masterpieces for the discerning eye.
+                            </p>
+                        </div>
+                        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white animate-bounce">
+                            <span className="material-symbols-outlined text-3xl">expand_more</span>
+                        </div>
+                    </section>
+
+                    {/* The Philosophy Section */}
+                    <section className="bg-surface py-32 px-12 lg:px-24">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-24 items-start">
+                            <div className="md:col-span-5">
+                                <span className="font-label text-xs uppercase tracking-[0.4em] text-secondary mb-6 block">The Philosophy</span>
+                                <h2 className="font-serif text-5xl md:text-6xl font-normal leading-tight mb-12">
+                                    Beyond the <br />Surface.
+                                </h2>
+                            </div>
+                            <div className="md:col-span-7 flex flex-col gap-8">
+                                <p className="font-body text-xl text-on-surface-variant leading-relaxed">
+                                    At Level Stone, we view every floor as a silent canvas. Our artistry lies in the intersection of chemistry and craftsmanship—curating textures that invite touch and finishes that capture light.
+                                </p>
+                                <p className="font-body text-lg text-on-surface-variant/80 leading-relaxed">
+                                    Our process is obsessive. We don't just pour surfaces; we engineer environments. From the initial aggregate selection to the final diamond-honed polish, every gesture is deliberate, ensuring your space feels grounded yet ethereal.
+                                </p>
+                                <div className="mt-8">
+                                    <Link className="inline-flex items-center gap-4 group text-primary" to="/artistry">
+                                        <span className="font-label text-sm uppercase tracking-widest border-b border-black pb-1">Discover Our Artistry</span>
+                                        <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-400">east</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Selected Works (Gallery) */}
+                    <section className="bg-surface-container-low py-32 overflow-hidden rounded-lg mx-6 md:mx-12 mb-24">
+                        <div className="px-12 lg:px-24 mb-16">
+                            <h2 className="font-serif text-4xl italic mb-4">Selected Works</h2>
+                            <div className="h-[1px] w-24 bg-primary/20"></div>
+                        </div>
+                        <div className="flex flex-col md:flex-row gap-8 px-12 lg:px-24">
+                            {/* Large Gallery Card */}
+                            <div className="flex-1 group rounded-lg overflow-hidden">
+                                <div className="aspect-[4/5] relative bg-surface-container-highest">
+                                    <img alt="Modern Living Room with Polished Floor" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Ultra modern living room with reflective dark polished stone floors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS9RwExVR8tLedr_Fd1HTHtT4rYx8XaOqXXKXaKPIgQPI5dNwH4WZ-PSMRnnvluqFRf6NaDY2QRh7h_OKisvOFIHEJ4E55g95_n8euPZkAXfTzHkSHudIL3oCyX84bQinCf-BI9mLRmzFjMLZLYmlAuXrrLtd4Fjizic0tntNOBIPZDQQEECpHB0Kl7nPlUOnxddYyuyf6n0RC-tvMgHWoJK6kKVHy-atQffrKTVtDla0Q-JXREa9SHvQZfH1CII_gjd2QrsV36GDh" />
+                                    <div className="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
+                                        <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-2">Residential</p>
+                                        <h3 className="font-serif text-2xl italic">The Obsidian Atrium</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Secondary Gallery Column */}
+                            <div className="flex-1 flex flex-col gap-8 md:mt-24">
+                                <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-highest group rounded-lg">
+                                    <img alt="Architectural Concrete" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed view of warm toned seamless concrete floor in sunlit gallery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgo0hRHkjLt2uquafy4W6Rx8-nrFM2xWNa5lX0SBehmxsyx0j-k6EoEXrFqAS86FsoCItyrjzzSQhTyfX7TF7fjPIsXfMyXLCiQaSetYmLFFnUiTjyuzg8AdPkAw8pcsYNi90NcsVS0AitM2_CUecJErfTglnfzC-9EcGYxeaHFIn1t6Ll5632dZaCt09Om8hsdghJ40TFqBS8zUWyEgxJ-z9eFcTMY-UCeEHnUVqHdyvPfmM5eNE2aHZHuXDzSxkoFk3ltzLSJT4M" />
+                                    <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
+                                        <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Commercial</p>
+                                        <h3 className="font-serif text-xl italic">The Solstice Gallery</h3>
+                                    </div>
+                                </div>
+                                <div className="aspect-[4/3] relative overflow-hidden bg-surface-container-highest group rounded-lg">
+                                    <img alt="Executive Office Floor" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Matte grey polished concrete in a professional corporate lobby space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPrkbctFrtE8FmWOF8uL1iFBs51_0d9LHwngHKM1v2vFeDGGlZezIEay6-gQAWHrOlHBoLfuteCOyaFnaWG_bpF7lEYeILHi-O_noZGUhjUWjaJxJSjTCSDPQz9aQPs7ZfAGpmRAFa1MgPkudtZGYbCXi6rQuiXzrFsf5hr0VR40gz-wuZavQifmcoSscqqr8e4BB8jPjqpOm4sBOvnYllImbO07Fx9MlOgchpmuAtDmfFwnIepsVbfIKK55C8-Jz-BC-LtGf6MdEE" />
+                                    <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
+                                        <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Office</p>
+                                        <h3 className="font-serif text-xl italic">Prism Corporate Suite</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="bg-surface py-20 px-6">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <span className="material-symbols-outlined text-secondary text-5xl mb-8">architecture</span>
+                            <h2 className="font-serif text-5xl md:text-7xl font-light mb-12">Begin Your Journey.</h2>
+                            <p className="font-body text-xl text-on-surface-variant mb-16 max-w-xl mx-auto leading-relaxed">
+                                Collaborate with our master artisans to define the foundation of your vision. Private consultations available globally.
+                            </p>
+                            <div className="flex flex-col md:flex-row gap-6 justify-center">
+                                <Link to="/inquiries" className="bg-primary text-on-primary px-12 py-5 font-label text-sm uppercase tracking-[0.2em] hover:opacity-80 transition-opacity rounded-lg">
+                                    Request Consultation
+                                </Link>
+                                <Link to="/gallery" className="border border-outline-variant/30 text-on-surface px-12 py-5 font-label text-sm uppercase tracking-[0.2em] hover:bg-surface-container transition-colors rounded-lg">
+                                    View Portfolio
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        // Screen 3 -> Gallery
+        const GalleryPage = () => {
+            return (
+                <div className="pt-32 pb-24">
+                    {/* Exhibition Header */}
+                    <header className="px-12 mb-24 max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                            <div className="md:col-span-8">
+                                <h1 className="font-serif text-7xl md:text-9xl font-light tracking-tighter text-primary leading-none mb-8">The Gallery</h1>
+                                <p className="font-body text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                                    A curated selection of architectural milestones. From monolithic slabs to intricate inlays, explore the dialogue between raw earth and human precision.
+                                </p>
+                            </div>
+                            <div className="md:col-span-4 flex items-end justify-end">
+                                <div className="flex flex-col items-end gap-2">
+                                    <span className="font-label text-xs tracking-[0.3em] uppercase text-on-surface-variant">Volume IV</span>
+                                    <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary">2024 Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* Digital Exhibition Grid */}
+                    <section className="px-12 max-w-[1600px] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-24">
+                            {/* Project 01 */}
+                            <div className="md:col-span-12 group cursor-crosshair">
+                                <div className="aspect-[21/9] overflow-hidden bg-surface-container mb-8 relative rounded-lg">
+                                    <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Modern architectural home with expansive grey stone flooring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0FIBrBJGf32D0-tsd4XotOZgqIe9s0ZAyxJ_R8g8dVZIMyI9QkDZO-DdQvLvvmkWnpaj8aPsDBdQRD3-ggtLTDn0ZuHEAYCJYhsdQPvzH6pMf3LTWYTfRQXXcumeP3tdR6G2weK0W0tLN403QVutybKxTi-fttvyzPsI1gEsd9OtTKBvGiJFQzFArI-pdVUa6NQxsFLJxtqpd31tU-WASZ63peMsr7BYVZYj52tL3usXXdF2TScNt-Llhr9gp_-iBvDFNAit1s0Ah" />
+                                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 01</span>
+                                        <h2 className="font-serif text-4xl italic text-primary">The Monolith Atrium</h2>
+                                    </div>
+                                    <p className="font-body text-sm text-on-surface-variant max-w-xs text-right">
+                                        Honed Italian Basalt, seamless transition from interior to terrace.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Project 02 */}
+                            <div className="md:col-span-5 md:mt-24 group cursor-crosshair">
+                                <div className="aspect-[3/4] overflow-hidden bg-surface-container mb-8 rounded-lg">
+                                    <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Close up of geometric stone tile pattern in high-end kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdvxR1_7CzQCjE5c0qUz61sau_tNso398QL-NYjGAD3XUCPCdkvFVO706yl0B7kLCL2XW7XpHruF2pf9h-auuDuzJN1xTMv4FiTSDJXJu37i5PCqJu-N2gNwQLv03CtZ7CGyOQR_eKA5bdGZu1680Wet4TOC7eKyeWzTgWr3FjEbOV1avm6oq_QNp0A7nFjYB46ZfxN6GvhSiFZx7Elwf_oRX6V78KKdxQZHRXSkhcGAVPGXSQonsn56h5Lec4I1RSa5_BMzLH4lmv" />
+                                </div>
+                                <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 02</span>
+                                <h2 className="font-serif text-3xl text-primary">Geometric Rift</h2>
+                                <p className="font-body text-sm text-on-surface-variant mt-4">
+                                    Custom cut Calacatta Borghini with oxidized brass inlay.
+                                </p>
+                            </div>
+
+                            {/* Project 03 */}
+                            <div className="md:col-span-7 group cursor-crosshair">
+                                <div className="aspect-square overflow-hidden bg-surface-container mb-8 rounded-lg">
+                                    <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Polished white marble bathroom floors reflecting natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJU9CaTmU1RsgTZEbRPrBPAAzZmDJ_3833wnE-vupCrf42LzI0eBNmRCXlM9_F1g-h2Fsz6NIqHJqEqKQeqfVwdsn2ELrmhwLBB4ZwdL_XzJNHn4wQaexshvc41owHtPgjHezKcp8IFZA5-sydHaNfondw0a3zZwgKZ_QlqNaCy49meUNiAg-vO9uj3lgMX5hTKO8GE3ljTHZOooGGA7R_hEgXkzoet6tkyDiEKcaFhj9n_zVWX-56Xn2q5uFuHSCPdA6Tp9HGFPOS" />
+                                </div>
+                                <div className="pl-12">
+                                    <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 03</span>
+                                    <h2 className="font-serif text-3xl text-primary">Ethereal Light Bath</h2>
+                                    <p className="font-body text-sm text-on-surface-variant mt-4 max-w-sm">
+                                        Statuary Marble, hand-selected for vein continuity across vertical planes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="mt-48 bg-surface-container-low py-32 px-12 overflow-hidden mx-6 md:mx-12 rounded-lg">
+                        <div className="max-w-4xl mx-auto text-center relative z-10">
+                            <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary mb-12 block">Curate Your Space</span>
+                            <h2 className="font-serif text-6xl md:text-8xl text-primary mb-12 leading-tight">Begin your <br /><span className="italic">material journey.</span></h2>
+                            <Link to="/inquiries" className="bg-primary text-on-primary px-16 py-6 font-serif italic text-xl hover:bg-stone-800 transition-colors duration-400 rounded-lg inline-block">
+                                Inquire About Commissions
+                            </Link>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        // Screen 1 -> Artistry
+        const ArtistryPage = () => {
+            return (
+                <div className="pt-32 pb-24">
+                    {/* Hero Header */}
+                    <header className="px-6 md:px-12 mb-24 max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+                            <div className="md:col-span-8">
+                                <span className="text-xs tracking-[0.3em] uppercase text-secondary mb-6 block font-label">The Portfolio</span>
+                                <h1 className="text-6xl md:text-8xl font-serif font-light leading-tight">Our <span className="italic">Artistry</span></h1>
+                            </div>
+                            <div className="md:col-span-4 pb-2">
+                                <p className="text-on-surface-variant font-body text-lg leading-relaxed border-l border-outline-variant/30 pl-8">
+                                    Beyond the surface. We treat architectural concrete as a canvas, merging industrial strength with the delicate hand of a master craftsman.
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* Services Exhibition */}
+                    <section className="space-y-48 px-6 md:px-12 max-w-7xl mx-auto">
+                        {/* Specialty 01 */}
+                        <article className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-start">
+                            <div className="md:col-span-7 order-2 md:order-1">
+                                <div className="aspect-[4/5] bg-surface-container-low relative overflow-hidden group rounded-lg">
+                                    <img alt="Pristine white high-gloss epoxy flooring" className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCghsCVojf-kAiM0e-oLH_7x52VwRQiZkAfWXwdzIx7CmIRcTD_K8nKIPNxxqPdpjSyNS0FC8UsLxfkAViz4XyyLYF8LGEnDZ1P5BaqbZq5dQyAgB419fVZE2kmbnqVtMuNcVMYbpCRe86C3itSROGDL6MhaTDmOA5cu32ekhkE2b2K2oo1YQ2sc_QyPi_Wq4emxyiW6t5xOVtUjVYA0MlF0rwo8bpTAMlhH_-ow204akNIgVIWbOM21IxG64xKnE5imWBCY58miIpQ" />
+                                    <div className="absolute bottom-0 right-0 p-8 text-white/40 font-serif text-9xl select-none">01</div>
+                                </div>
+                            </div>
+                            <div className="md:col-span-5 order-1 md:order-2 md:pt-24">
+                                <h2 className="text-4xl font-serif mb-8 italic">Epoxy Coatings</h2>
+                                <div className="space-y-8">
+                                    <p className="font-body text-on-surface-variant leading-loose text-lg">
+                                        A seamless fusion of durability and crystalline clarity. Our epoxy systems are formulated to create depth, mirroring the aesthetic of natural obsidian or fluid marble.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        {/* Specialty 02 */}
+                        <article className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-start">
+                            <div className="md:col-span-5 md:pt-24">
+                                <h2 className="text-4xl font-serif mb-8 italic">Concrete Overlays</h2>
+                                <div className="space-y-8">
+                                    <p className="font-body text-on-surface-variant leading-loose text-lg">
+                                        Breathing new life into existing foundations. Our micro-topping overlays provide a refined, minimalist finish that captures the raw essence of Brutalist design without the structural burden.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="md:col-span-7">
+                                <div className="aspect-[4/5] bg-surface-container-low relative overflow-hidden group rounded-lg">
+                                    <img alt="Smooth grey hand-troweled concrete wall texture" className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCikyq66uqXrrZ1tax1SVb6vfToMjeUX6-qS_hJRLjHhe6GAcuzYEz0To7JTtNBWXCHvrc1f66U7f3FPVJOLVPpP4A0qlWvdWVYS_oBAS5Z6e-_lbXmf7446D5ym5HfGivKSwGOnTlAmTEWn5RPv8twNsUA4Zjl4s7SVr3OAAb9MKhtXfMnoy_WVzVzRMZEY5tdYq-LyMRRcqj6uEJeQv-JEd-0Gqp7pZWkB-3yh0n8vjaiOfxSZgl5ECA6KC5VLLyqOTk4uBgugs6m" />
+                                    <div className="absolute bottom-0 left-0 p-8 text-black/20 font-serif text-9xl select-none">02</div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="bg-primary-container py-32 text-center text-on-primary-container mt-24 mx-6 md:mx-12 rounded-lg">
+                        <div className="max-w-3xl mx-auto px-6">
+                            <h3 className="text-4xl md:text-5xl font-serif mb-12 text-on-primary">Ready to elevate your environment?</h3>
+                            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+                                <Link to="/inquiries" className="bg-on-primary text-primary px-12 py-4 text-xs tracking-[0.2em] uppercase hover:bg-secondary hover:text-white transition-all duration-400 rounded-lg font-label">
+                                    Begin Your Inquiry
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        // Screen 2 -> Inquiries
+        const InquiriesPage = () => {
+            const [submitted, setSubmitted] = useState(false);
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                setSubmitted(true);
+                setTimeout(() => setSubmitted(false), 3000);
+            };
+
+            return (
+                <div className="pt-32 pb-24 px-8 md:px-24 max-w-7xl mx-auto">
+                    {/* Hero Section */}
+                    <header className="mb-24 flex flex-col md:flex-row items-end justify-between gap-8">
+                        <div className="max-w-2xl">
+                            <h1 className="text-6xl md:text-8xl font-serif font-light leading-tight text-primary">
+                                Begin the <br />
+                                <span className="italic">Dialogue.</span>
+                            </h1>
+                        </div>
+                        <div className="max-w-xs pb-4">
+                            <p className="text-on-surface-variant font-body text-sm leading-relaxed">
+                                We invite you to share the vision of your upcoming architectural or interior project. Every masterpiece begins with an inquiry.
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Main Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+                        {/* Left Column: Form */}
+                        <section className="lg:col-span-7">
+                            {submitted ? (
+                                <div className="p-12 bg-surface-container-low rounded-lg border-l-4 border-secondary text-center h-full flex flex-col justify-center">
+                                    <span className="material-symbols-outlined text-5xl text-secondary mb-4">check_circle</span>
+                                    <h3 className="font-serif text-3xl mb-2">Inquiry Received</h3>
+                                    <p className="font-body text-on-surface-variant">Our concierge will be in touch shortly to discuss your vision.</p>
+                                </div>
+                            ) : (
+                                <form className="space-y-12" onSubmit={handleSubmit}>
+                                    <div className="group">
+                                        <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Full Name</label>
+                                        <input required className="w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 focus:ring-0 focus:border-primary px-0 font-serif text-2xl placeholder:text-stone-300 transition-all duration-400" placeholder="Julian Vane" type="text" />
+                                    </div>
+                                    <div className="group">
+                                        <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Project Type</label>
+                                        <div className="flex flex-wrap gap-4 mt-2">
+                                            <button className="px-6 py-3 bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest rounded-lg" type="button">Residential</button>
+                                            <button className="px-6 py-3 bg-surface-container-highest text-on-surface font-label text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-colors rounded-lg" type="button">Commercial</button>
+                                            <button className="px-6 py-3 bg-surface-container-highest text-on-surface font-label text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-colors rounded-lg" type="button">Custom</button>
+                                        </div>
+                                    </div>
+                                    <div className="group">
+                                        <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Your Vision</label>
+                                        <textarea required className="w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 focus:ring-0 focus:border-primary px-0 font-serif text-2xl placeholder:text-stone-300 transition-all duration-400" placeholder="Describe the atmosphere and materials..." rows="4"></textarea>
+                                    </div>
+                                    <div className="pt-8">
+                                        <button className="w-full md:w-auto px-16 py-6 bg-primary text-on-primary font-label text-xs uppercase tracking-[0.3em] hover:opacity-90 transition-all duration-400 flex items-center justify-center gap-4 rounded-lg" type="submit">
+                                            Submit Inquiry
+                                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
+                        </section>
+
+                        {/* Right Column: Details & Map */}
+                        <aside className="lg:col-span-5 space-y-24">
+                            {/* Contact Blocks */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                                <div className="space-y-4">
+                                    <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">The Atelier</h3>
+                                    <div className="font-body text-sm space-y-1 text-on-surface">
+                                        <p>14 Carrara Mews</p>
+                                        <p>London, SW1X 8RS</p>
+                                        <p className="pt-2 underline underline-offset-4 decoration-stone-200">+44 20 7946 0123</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">Concierge</h3>
+                                    <div className="font-body text-sm space-y-1 text-on-surface">
+                                        <p>Mon — Fri</p>
+                                        <p>09:00 — 18:00 GMT</p>
+                                        <p className="pt-2 underline underline-offset-4 decoration-stone-200">concierge@levelstone.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Map Placeholder */}
+                            <div className="relative group overflow-hidden bg-surface-container aspect-[4/3] rounded-lg">
+                                <img className="w-full h-full object-cover grayscale opacity-60 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9yiaPCMJ0ooCRWaNMuKAMqe3xUVe_3cGCaP1tzcv20wZ9kmMA3nAXJsXVpYL5q9-isoXMVBD8Z5vc6ScxsWxM94FkTBSZ2YGc0yQikYIplhmYIDx5tUhGJ4wNnOZFgSiJ3ISapbw-Uh8jRcE9lrZHzs2OU9XSMpN9vIgz3XvlSdFIuuQfv7NE-tRbEfNmev0ugoeCaOCt6x8WV3yErXc2u21QcHI0UCnPcet-FPLZYqeaI9RKMymeSRGWekOoyEBuRSbtJ0Kd94Kf" />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-4 h-4 bg-primary flex items-center justify-center rounded-full">
+                                        <div className="w-12 h-12 bg-primary/20 animate-ping rounded-full absolute"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            );
+        };
+
+        // --- App Component ---
+
+        const App = () => {
+            return (
+                <MemoryRouter>
+                    <div className="min-h-screen flex flex-col font-body">
+                        <TopNav />
+                        <main className="flex-grow">
+                            <Routes>
+                                <Route path="/" element={<HomePage />} />
+                                <Route path="/gallery" element={<GalleryPage />} />
+                                <Route path="/artistry" element={<ArtistryPage />} />
+                                <Route path="/inquiries" element={<InquiriesPage />} />
+                            </Routes>
+                        </main>
+                        <Footer />
+                    </div>
+                </MemoryRouter>
+            );
+        };
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
