@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function InquiriesPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -88,19 +87,28 @@ export default function InquiriesPage() {
             </div>
           </div>
 
-          {/* Map Placeholder */}
-          <div className="relative group overflow-hidden bg-surface-container aspect-[4/3] rounded-lg">
+          {/* Location Card */}
+          <a
+            href="https://www.google.com/maps/search/11245+SE+6th+St+Suite+280+Bellevue+WA+98004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block aspect-[4/3] rounded-lg relative overflow-hidden group"
+          >
             <img
-              className="w-full h-full object-cover grayscale opacity-60 contrast-125"
-              src="/images/IMG_7468.jpg"
-              alt="Atelier location"
+              src="/image.png"
+              alt="Map of Bellevue, WA office location"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-4 h-4 bg-primary flex items-center justify-center rounded-full">
-                <div className="w-12 h-12 bg-primary/20 animate-ping rounded-full absolute"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="font-label text-[10px] uppercase tracking-[0.3em] text-white/60 mb-1">Visit Us</p>
+                  <p className="font-serif text-lg italic text-white">Bellevue, WA</p>
+                </div>
+                <span className="material-symbols-outlined text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-400">arrow_forward</span>
               </div>
             </div>
-          </div>
+          </a>
         </aside>
       </div>
     </div>
