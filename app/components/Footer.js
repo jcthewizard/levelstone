@@ -11,7 +11,7 @@ export default function Footer() {
         <a className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="#">Privacy</a>
       </div>
       <div className="text-[0.6rem] tracking-[0.3em] uppercase text-stone-400 mt-8 text-center">
-        &copy; LEVEL STONE. CRAFTED FOR THE DISCERNING.
+        &copy; LEVEL STONE USA. CRAFTED FOR THE DISCERNING.
       </div>
     </footer>
   );

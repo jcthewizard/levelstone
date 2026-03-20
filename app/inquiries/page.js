@@ -72,19 +72,18 @@ export default function InquiriesPage() {
           {/* Contact Blocks */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             <div className="space-y-4">
-              <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">The Atelier</h3>
+              <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">The Office</h3>
               <div className="font-body text-sm space-y-1 text-on-surface">
-                <p>14 Carrara Mews</p>
-                <p>London, SW1X 8RS</p>
-                <p className="pt-2 underline underline-offset-4 decoration-stone-200">+44 20 7946 0123</p>
+                <p>11245 SE 6th Street</p>
+                <p>Suite 280</p>
+                <p>Bellevue, WA 98004</p>
               </div>
             </div>
             <div className="space-y-4">
-              <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">Concierge</h3>
+              <h3 className="font-label text-[10px] uppercase tracking-[0.3em] text-secondary">Contact</h3>
               <div className="font-body text-sm space-y-1 text-on-surface">
-                <p>Mon — Fri</p>
-                <p>09:00 — 18:00 GMT</p>
-                <p className="pt-2 underline underline-offset-4 decoration-stone-200">concierge@levelstone.com</p>
+                <p>Sean Hansen</p>
+                <p className="pt-2 underline underline-offset-4 decoration-stone-200">+1 (425) 516-5542</p>
               </div>
             </div>
           </div>

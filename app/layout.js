@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata = {
-  title: 'Level Stone | Architectural Concrete',
+  title: 'Level Stone USA | Architectural Concrete',
   description: 'Transforming raw architectural elements into seamless, high-performance masterpieces.',
 };
 
