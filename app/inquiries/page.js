@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function InquiriesPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [projectType, setProjectType] = useState('Residential');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,9 +48,16 @@ export default function InquiriesPage() {
               <div className="group">
                 <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Project Type</label>
                 <div className="flex flex-wrap gap-4 mt-2">
-                  <button className="px-6 py-3 bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest rounded-lg" type="button">Residential</button>
-                  <button className="px-6 py-3 bg-surface-container-highest text-on-surface font-label text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-colors rounded-lg" type="button">Commercial</button>
-                  <button className="px-6 py-3 bg-surface-container-highest text-on-surface font-label text-[10px] uppercase tracking-widest hover:bg-stone-200 transition-colors rounded-lg" type="button">Custom</button>
+                  {['Residential', 'Commercial', 'Custom'].map((type) => (
+                    <button
+                      key={type}
+                      className={`px-6 py-3 font-label text-[10px] uppercase tracking-widest rounded-lg transition-colors ${projectType === type ? 'bg-primary text-on-primary' : 'bg-surface-container-highest text-on-surface hover:bg-stone-200'}`}
+                      type="button"
+                      onClick={() => setProjectType(type)}
+                    >
+                      {type}
+                    </button>
+                  ))}
                 </div>
               </div>
               <div className="group">
