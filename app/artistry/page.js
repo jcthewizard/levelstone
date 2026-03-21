@@ -27,7 +27,7 @@ export default function ArtistryPage() {
               <img
                 alt="Pristine white high-gloss epoxy flooring"
                 className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
-                src="/images/IMG_1007.jpeg"
+                src="/levelstone/images/IMG_1007.jpeg"
               />
               <div className="absolute bottom-0 right-0 p-8 text-white/40 font-serif text-9xl select-none">01</div>
             </div>
@@ -57,7 +57,7 @@ export default function ArtistryPage() {
               <img
                 alt="Smooth grey hand-troweled concrete wall texture"
                 className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
-                src="/images/IMG_1144.jpg"
+                src="/levelstone/images/IMG_1144.jpg"
               />
               <div className="absolute bottom-0 left-0 p-8 text-black/20 font-serif text-9xl select-none">02</div>
             </div>

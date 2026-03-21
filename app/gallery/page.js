@@ -30,7 +30,7 @@ export default function GalleryPage() {
               <img
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Modern architectural home with expansive grey stone flooring"
-                src="/images/IMG_0257.JPG"
+                src="/levelstone/images/IMG_0257.JPG"
               />
               <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
@@ -51,7 +51,7 @@ export default function GalleryPage() {
               <img
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Close up of stone tile"
-                src="/images/IMG_0289.jpeg"
+                src="/levelstone/images/IMG_0289.jpeg"
               />
             </div>
             <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 02</span>
@@ -67,7 +67,7 @@ export default function GalleryPage() {
               <img
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Bathroom floors"
-                src="/images/IMG_0997.jpeg"
+                src="/levelstone/images/IMG_0997.jpeg"
               />
             </div>
             <div className="pl-12">
