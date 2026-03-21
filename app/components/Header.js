@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#faf9f5]/80 backdrop-blur-xl border-b border-stone-200/30 flex justify-between items-center px-6 md:px-12 py-6 max-w-full mx-auto">
       <Link href="/" className="font-logo text-2xl text-black tracking-widest uppercase">
-        LEVEL STONE
+        LEVELSTONE
       </Link>
       <div className="hidden md:flex gap-12 items-center">
         <Link className={getLinkClass("/")} href="/">Home</Link>

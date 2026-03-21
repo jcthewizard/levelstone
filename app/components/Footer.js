@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="w-full py-16 bg-[#faf9f5] flex flex-col items-center justify-center gap-8 px-8 border-t border-stone-200/30 mt-auto">
-      <Link href="/" className="font-logo text-3xl text-black mb-4 tracking-widest uppercase">LEVEL STONE</Link>
+      <Link href="/" className="font-logo text-3xl text-black mb-4 tracking-widest uppercase">LEVELSTONE</Link>
       <div className="flex gap-8 md:gap-16 flex-wrap justify-center">
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/gallery">The Gallery</Link>
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/artistry">Our Artistry</Link>
