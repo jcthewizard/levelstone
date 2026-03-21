@@ -15,7 +15,7 @@ export default function InquiriesPage() {
   return (
     <div className="pt-32 pb-24 px-8 md:px-24 max-w-7xl mx-auto">
       {/* Hero Section */}
-      <header className="mb-24 flex flex-col md:flex-row items-end justify-between gap-8">
+      <header className="mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
         <div className="max-w-2xl">
           <h1 className="text-6xl md:text-8xl font-serif font-light leading-tight text-primary">
             Begin the <br />
@@ -107,7 +107,8 @@ export default function InquiriesPage() {
               alt="Map of Bellevue, WA office location"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent">
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
               <div className="flex items-end justify-between">
                 <div>
                   <p className="font-label text-[10px] uppercase tracking-[0.3em] text-white/60 mb-1">Visit Us</p>
