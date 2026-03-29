@@ -9,7 +9,7 @@ export default function HomePage() {
           <img
             alt="Luxury polished concrete flooring"
             className="w-full h-full object-cover"
-            src="/levelstone/images/IMG_0018.jpg"
+            src="/levelstone/images/image.png"
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>

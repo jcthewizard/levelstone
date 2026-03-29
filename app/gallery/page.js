@@ -1,85 +1,107 @@
 import Link from 'next/link';
 
+const categories = [
+  {
+    id: 'marble',
+    title: 'Marble',
+    subtitle: 'Natural Stone Finishes',
+    materials: [
+      { name: 'Grey Marble', image: '/levelstone/images/Polished concrete tile with swirling veins.png' },
+      { name: 'Black Marble', image: '/levelstone/images/Polished black marble with striking veins.png' },
+      { name: 'Grey Ghost', color: '#d1d5db' },
+    ],
+  },
+  {
+    id: 'traditional',
+    title: 'Traditional',
+    subtitle: 'Classic Concrete Tones',
+    materials: [
+      { name: 'Traditional Dark', image: '/levelstone/images/Polished concrete tile with swirling veins (1).png' },
+      { name: 'Traditional Medium', image: '/levelstone/images/Polished concrete tile with organic veining.png' },
+      { name: 'Traditional Lite', color: '#d6d3d1' },
+    ],
+  },
+  {
+    id: 'specialty',
+    title: 'Specialty Finishes',
+    subtitle: 'Signature Collections',
+    materials: [
+      { name: 'Smoke', variants: ['Matte', 'Gloss'], image: '/levelstone/images/Elegant gray-veined marble tile close-up.png' },
+      { name: '50 Shades of Grey', color: '#6b7280' },
+      { name: 'Storm', variants: ['Matte', 'Gloss'], color: '#374151' },
+      { name: 'Glacier', variants: ['Satin'], color: '#e0e7ee' },
+      { name: 'Forest', variants: ['Satin'], color: '#3f6212' },
+      { name: 'Sand Dune', variants: ['Satin', 'Gloss', 'Grey'], color: '#c2b280' },
+    ],
+  },
+];
+
 export default function GalleryPage() {
   return (
     <div className="pt-32 pb-24">
-      {/* Exhibition Header */}
+      {/* Page Header */}
       <header className="px-12 mb-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-8">
-            <h1 className="font-serif text-7xl md:text-9xl font-light tracking-tighter text-primary leading-none mb-8">The Gallery</h1>
+            <h1 className="font-serif text-7xl md:text-9xl font-light tracking-tighter text-primary leading-none mb-8">Materials</h1>
             <p className="font-body text-on-surface-variant text-lg max-w-xl leading-relaxed">
-              A curated selection of architectural milestones. From monolithic slabs to intricate inlays, explore the dialogue between raw earth and human precision.
+              Every surface tells a story. Explore our curated palette of marbles, concrete tones, and specialty finishes — each selected for depth, character, and enduring beauty.
             </p>
           </div>
           <div className="md:col-span-4 flex items-end justify-end">
             <div className="flex flex-col items-end gap-2">
-              <span className="font-label text-xs tracking-[0.3em] uppercase text-on-surface-variant">Volume IV</span>
-              <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary">2024 Collection</span>
+              <span className="font-label text-xs tracking-[0.3em] uppercase text-on-surface-variant">Curated Selection</span>
+              <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary">Our Palette</span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Digital Exhibition Grid */}
-      <section className="px-12 max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-24">
-          {/* Project 01 */}
-          <div className="md:col-span-12 group cursor-crosshair">
-            <div className="aspect-[21/9] overflow-hidden bg-surface-container mb-8 relative rounded-lg">
-              <img
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Modern architectural home with expansive grey stone flooring"
-                src="/levelstone/images/IMG_0257.JPG"
-              />
-              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 01</span>
-                <h2 className="font-serif text-4xl italic text-primary">The Monolith Atrium</h2>
+      {/* Material Categories */}
+      {categories.map((category) => (
+        <section key={category.id} className="px-12 max-w-[1600px] mx-auto mb-24">
+          <div className="mb-12">
+            <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary block mb-2">{category.subtitle}</span>
+            <h2 className="font-serif text-4xl italic text-primary">{category.title}</h2>
+            <div className="h-[1px] w-16 bg-primary/20 mt-4"></div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {category.materials.map((material) => (
+              <div key={material.name} className="group cursor-pointer">
+                <div className="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative bg-surface-container">
+                  {material.image ? (
+                    <img
+                      src={material.image}
+                      alt={material.name}
+                      className="w-full h-full object-cover scale-110 transition-transform duration-700 group-hover:scale-[1.15]"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full transition-transform duration-700 group-hover:scale-105"
+                      style={{ backgroundColor: material.color }}
+                    />
+                  )}
+                  <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/5" />
+                </div>
+                <h3 className="font-serif text-xl text-primary mb-1">{material.name}</h3>
+                {material.variants && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {material.variants.map((v) => (
+                      <span
+                        key={v}
+                        className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-lg"
+                      >
+                        {v}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-              <p className="font-body text-sm text-on-surface-variant max-w-xs text-right">
-                Honed Italian Basalt, seamless transition from interior to terrace.
-              </p>
-            </div>
+            ))}
           </div>
-
-          {/* Project 02 */}
-          <div className="md:col-span-5 md:mt-24 group cursor-crosshair">
-            <div className="aspect-[3/4] overflow-hidden bg-surface-container mb-8 rounded-lg">
-              <img
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Close up of stone tile"
-                src="/levelstone/images/IMG_0289.jpeg"
-              />
-            </div>
-            <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 02</span>
-            <h2 className="font-serif text-3xl text-primary">Geometric Rift</h2>
-            <p className="font-body text-sm text-on-surface-variant mt-4">
-              Custom cut Calacatta Borghini with oxidized brass inlay.
-            </p>
-          </div>
-
-          {/* Project 03 */}
-          <div className="md:col-span-7 group cursor-crosshair">
-            <div className="aspect-square overflow-hidden bg-surface-container mb-8 rounded-lg">
-              <img
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Bathroom floors"
-                src="/levelstone/images/IMG_0997.jpeg"
-              />
-            </div>
-            <div className="pl-12">
-              <span className="font-label text-xs tracking-[0.2em] uppercase text-stone-400 mb-2 block">Project 03</span>
-              <h2 className="font-serif text-3xl text-primary">Ethereal Light Bath</h2>
-              <p className="font-body text-sm text-on-surface-variant mt-4 max-w-sm">
-                Statuary Marble, hand-selected for vein continuity across vertical planes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* CTA Section */}
       <section className="mt-48 bg-surface-container-low py-32 px-12 overflow-hidden mx-6 md:mx-12 rounded-lg">
