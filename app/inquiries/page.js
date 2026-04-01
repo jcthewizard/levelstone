@@ -169,7 +169,7 @@ export default function InquiriesPage() {
           <div className="border-b border-outline-variant/20 pb-12">
             <h3 className="font-serif text-xl text-primary mb-4">How many days does it take to install Levelstone?</h3>
             <p className="font-body text-on-surface-variant leading-relaxed">
-              Our process is 3 days start to finish. Some circumstances depending on temperature and size and floor conditions we can even do a 2 day overlay. If the substrate needs pre-leveling or is in need of extra prep work to remove glue etc, these can be looked at case by case to determine extra prep timeline.
+              Our process is 4 days start to finish. Some circumstances depending on temperature and size and floor conditions we can even do a 2 day overlay. If the substrate needs pre-leveling or is in need of extra prep work to remove glue etc, these can be looked at case by case to determine extra prep timeline.
             </p>
           </div>
 
