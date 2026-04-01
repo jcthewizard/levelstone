@@ -5,16 +5,6 @@ import { useState } from 'react';
 export default function InquiriesPage() {
   const [submitted, setSubmitted] = useState(false);
   const [projectType, setProjectType] = useState('Residential');
-  const [files, setFiles] = useState([]);
-
-  const handleFileChange = (e) => {
-    const newFiles = Array.from(e.target.files);
-    setFiles((prev) => [...prev, ...newFiles]);
-  };
-
-  const removeFile = (index) => {
-    setFiles((prev) => prev.filter((_, i) => i !== index));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,26 +70,6 @@ export default function InquiriesPage() {
                 <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Your Vision</label>
                 <textarea required className="w-full bg-transparent border-0 border-b border-outline-variant/30 py-4 focus:ring-0 focus:outline-none focus:border-primary px-0 font-serif text-2xl placeholder:text-stone-300 transition-all duration-400" placeholder="Describe the atmosphere and materials..." rows={4}></textarea>
               </div>
-              <div className="group">
-                <label className="block font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mb-4">Photos <span className="text-stone-400">(Optional)</span></label>
-                <label className="flex items-center gap-3 cursor-pointer w-fit px-6 py-3 bg-surface-container-highest text-on-surface font-label text-[10px] uppercase tracking-widest rounded-lg hover:bg-stone-200 transition-colors">
-                  <span className="material-symbols-outlined text-sm">add_photo_alternate</span>
-                  <span>Upload Images</span>
-                  <input type="file" accept="image/*" multiple className="hidden" onChange={handleFileChange} />
-                </label>
-                {files.length > 0 && (
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    {files.map((file, i) => (
-                      <div key={i} className="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg">
-                        <span className="font-body text-xs text-on-surface-variant truncate max-w-[150px]">{file.name}</span>
-                        <button type="button" onClick={() => removeFile(i)} className="text-stone-400 hover:text-black transition-colors">
-                          <span className="material-symbols-outlined text-sm">close</span>
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
               <div className="pt-8">
                 <button className="w-full md:w-auto px-16 py-6 bg-primary text-on-primary font-label text-xs uppercase tracking-[0.3em] hover:opacity-90 transition-all duration-400 flex items-center justify-center gap-4 rounded-lg" type="submit">
                   Submit Inquiry
@@ -127,6 +97,7 @@ export default function InquiriesPage() {
               <div className="font-body text-sm space-y-1 text-on-surface">
                 <p>Sean Hansen</p>
                 <p className="pt-2 underline underline-offset-4 decoration-stone-200">+1 (425) 516-5542</p>
+                <p className="underline underline-offset-4 decoration-stone-200">Sean@levelstoneusa.com</p>
               </div>
             </div>
           </div>
