@@ -86,3 +86,18 @@
 .page-transition {
   animation: page-enter 0.5s ease-out;
 }
+
+@keyframes gallery-expand {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: gallery-expand 0.35s ease-out;
+}

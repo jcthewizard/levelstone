@@ -150,6 +150,31 @@ export default function InquiriesPage() {
           </a>
         </aside>
       </div>
+
+      {/* FAQ Section */}
+      <section id="faq" className="mt-48 max-w-3xl mx-auto">
+        <div className="mb-16">
+          <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary block mb-2">Common Questions</span>
+          <h2 className="font-serif text-4xl italic text-primary">FAQ</h2>
+          <div className="h-[1px] w-16 bg-primary/20 mt-4"></div>
+        </div>
+
+        <div className="space-y-12">
+          <div className="border-b border-outline-variant/20 pb-12">
+            <h3 className="font-serif text-xl text-primary mb-4">How many days does it take to install Levelstone?</h3>
+            <p className="font-body text-on-surface-variant leading-relaxed">
+              Our process is 3 days start to finish. Some circumstances depending on temperature and size and floor conditions we can even do a 2 day overlay. If the substrate needs pre-leveling or is in need of extra prep work to remove glue etc, these can be looked at case by case to determine extra prep timeline.
+            </p>
+          </div>
+
+          <div className="border-b border-outline-variant/20 pb-12">
+            <h3 className="font-serif text-xl text-primary mb-4">Does the Levelstone overlay have perfect flawless mottling?</h3>
+            <p className="font-body text-on-surface-variant leading-relaxed">
+              Levelstone is a natural, organic look and flow.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -50,6 +50,10 @@ export default function ArtistryPage() {
               <p className="font-body text-on-surface-variant leading-loose text-lg">
                 Breathing new life into existing foundations. Our micro-topping overlays provide a refined, minimalist finish that captures the raw essence of Brutalist design without the structural burden.
               </p>
+              <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-secondary border border-secondary/30 px-4 py-2 rounded-lg">
+                <span className="material-symbols-outlined text-sm">verified</span>
+                Patent-Pending Technology
+              </span>
             </div>
           </div>
           <div className="md:col-span-7">
