@@ -14,10 +14,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <h1 className="font-serif text-7xl md:text-9xl font-light italic leading-tight text-white drop-shadow-sm">
-            Flooring as Art.
-          </h1>
-          <p className="mt-8 font-body text-lg md:text-xl text-white/90 tracking-wide font-light max-w-2xl mx-auto">
+          <p className="font-body text-lg md:text-xl text-white/90 tracking-wide font-light max-w-2xl mx-auto">
             Transforming raw architectural elements into seamless, high-performance masterpieces for the discerning eye.
           </p>
         </div>

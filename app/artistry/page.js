@@ -36,7 +36,7 @@ export default function ArtistryPage() {
             <h2 className="text-4xl font-serif mb-8 italic">Epoxy Coatings</h2>
             <div className="space-y-8">
               <p className="font-body text-on-surface-variant leading-loose text-lg">
-                A seamless fusion of durability and crystalline clarity. Our epoxy systems are formulated to create depth, mirroring the aesthetic of natural obsidian or fluid marble.
+                A seamless fusion of durability and crystalline clarity. Our epoxy systems are formulated to create depth, mirroring the aesthetic of natural obsidian or fluid stone.
               </p>
             </div>
           </div>

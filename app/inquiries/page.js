@@ -18,6 +18,12 @@ export default function InquiriesPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const name = form.querySelector('input[type="text"]').value;
+    const vision = form.querySelector('textarea').value;
+    const subject = encodeURIComponent(`New ${projectType} Inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nProject Type: ${projectType}\n\n${vision}`);
+    window.location.href = `mailto:Sean@levelstoneusa.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -152,7 +158,7 @@ export default function InquiriesPage() {
       </div>
 
       {/* FAQ Section */}
-      <section id="faq" className="mt-48 max-w-3xl mx-auto">
+      <section id="faq" className="mt-48 max-w-3xl mx-auto scroll-mt-48">
         <div className="mb-16">
           <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary block mb-2">Common Questions</span>
           <h2 className="font-serif text-4xl italic text-primary">FAQ</h2>

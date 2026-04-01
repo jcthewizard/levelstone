@@ -5,12 +5,12 @@ import Link from 'next/link';
 
 const categories = [
   {
-    id: 'marble',
-    title: 'Marble',
-    subtitle: 'Natural Stone Finishes',
+    id: 'stone',
+    title: 'Stone',
+    subtitle: 'Natural Finishes',
     materials: [
       {
-        name: 'Grey Marble',
+        name: 'Grey Stone',
         image: '/levelstone/images/Polished concrete tile with swirling veins.png',
         gallery: [
           '/levelstone/images/gallery/grey-marble-1.jpeg',
@@ -19,7 +19,7 @@ const categories = [
         ],
       },
       {
-        name: 'Black Marble',
+        name: 'Black Stone',
         image: '/levelstone/images/Polished black marble with striking veins.png',
         gallery: [
           '/levelstone/images/gallery/black-marble-1.jpeg',
@@ -280,7 +280,7 @@ export default function GalleryPage() {
           <div className="md:col-span-8">
             <h1 className="font-serif text-7xl md:text-9xl font-light tracking-tighter text-primary leading-none mb-8">Materials</h1>
             <p className="font-body text-on-surface-variant text-lg max-w-xl leading-relaxed">
-              Every surface tells a story. Explore our curated palette of marbles, concrete tones, and specialty finishes — each selected for depth, character, and enduring beauty.
+              Every surface tells a story. Explore our curated palette of stones, concrete tones, and specialty finishes — each selected for depth, character, and enduring beauty.
             </p>
           </div>
           <div className="md:col-span-4 flex items-end justify-end">
