@@ -158,7 +158,7 @@ export default function InquiriesPage() {
       </div>
 
       {/* FAQ Section */}
-      <section id="faq" className="mt-48 max-w-3xl mx-auto scroll-mt-48">
+      <section id="faq" className="mt-48 max-w-3xl mx-auto scroll-mt-40">
         <div className="mb-16">
           <span className="font-label text-xs tracking-[0.3em] uppercase text-secondary block mb-2">Common Questions</span>
           <h2 className="font-serif text-4xl italic text-primary">FAQ</h2>

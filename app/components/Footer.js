@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="flex gap-8 md:gap-16 flex-wrap justify-center">
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/gallery">The Gallery</Link>
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/artistry">Our Artistry</Link>
-        <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/inquiries" scroll={true}>Inquiries</Link>
-        <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/inquiries#faq" scroll={false}>FAQ</Link>
+        <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/inquiries">Inquiries</Link>
+        <a className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/levelstone/inquiries#faq">FAQ</a>
       </div>
       <div className="text-[0.6rem] tracking-[0.3em] uppercase text-stone-400 mt-8 text-center">
         &copy; LEVEL STONE USA. CRAFTED FOR THE DISCERNING.
