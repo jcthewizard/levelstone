@@ -8,7 +8,7 @@ const categories = [
     materials: [
       { name: 'Grey Marble', image: '/levelstone/images/Polished concrete tile with swirling veins.png' },
       { name: 'Black Marble', image: '/levelstone/images/Polished black marble with striking veins.png' },
-      { name: 'Grey Ghost', color: '#d1d5db' },
+      { name: 'Grey Ghost', image: '/levelstone/images/grey-ghost.png' },
     ],
   },
   {
@@ -18,7 +18,7 @@ const categories = [
     materials: [
       { name: 'Traditional Dark', image: '/levelstone/images/Polished concrete tile with swirling veins (1).png' },
       { name: 'Traditional Medium', image: '/levelstone/images/Polished concrete tile with organic veining.png' },
-      { name: 'Traditional Lite', color: '#d6d3d1' },
+      { name: 'Traditional Lite', image: '/levelstone/images/traditional-lite.png' },
     ],
   },
   {
@@ -27,11 +27,11 @@ const categories = [
     subtitle: 'Signature Collections',
     materials: [
       { name: 'Smoke', variants: ['Matte', 'Gloss'], image: '/levelstone/images/Elegant gray-veined marble tile close-up.png' },
-      { name: '50 Shades of Grey', color: '#6b7280' },
-      { name: 'Storm', variants: ['Matte', 'Gloss'], color: '#374151' },
-      { name: 'Glacier', variants: ['Satin'], color: '#e0e7ee' },
-      { name: 'Forest', variants: ['Satin'], color: '#3f6212' },
-      { name: 'Sand Dune', variants: ['Satin', 'Gloss', 'Grey'], color: '#c2b280' },
+      { name: '50 Shades of Grey', image: '/levelstone/images/shades-of-grey.png' },
+      { name: 'Storm', variants: ['Matte', 'Gloss'], image: '/levelstone/images/storm.png' },
+      { name: 'Glacier', variants: ['Satin'], image: '/levelstone/images/glacier.png' },
+      { name: 'Forest', variants: ['Satin'], image: '/levelstone/images/forest.png' },
+      { name: 'Sand Dune', variants: ['Satin', 'Gloss', 'Grey'], image: '/levelstone/images/sand-dune.png' },
     ],
   },
 ];
