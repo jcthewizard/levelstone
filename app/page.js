@@ -9,12 +9,12 @@ export default function HomePage() {
           <img
             alt="Luxury polished concrete flooring"
             className="w-full h-full object-cover"
-            src="/levelstone/images/image.png"
+            src="/levelstone/images/cover3.jpg"
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <p className="font-body text-lg md:text-xl text-white/90 tracking-wide font-light max-w-2xl mx-auto">
+          <p className="font-body text-lg md:text-xl text-white tracking-wide font-light max-w-2xl mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
             Transforming raw architectural elements into seamless, high-performance masterpieces for the discerning eye.
           </p>
         </div>
