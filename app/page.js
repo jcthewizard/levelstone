@@ -65,7 +65,7 @@ export default function HomePage() {
                 src="/levelstone/images/IMG_1001.jpeg"
               />
               <div className="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
-                <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-2">Residential</p>
+                <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-2">Commercial</p>
                 <h3 className="font-serif text-2xl italic">The Obsidian Atrium</h3>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
                 src="/levelstone/images/IMG_1146.jpg"
               />
               <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
-                <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Commercial</p>
+                <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Residential</p>
                 <h3 className="font-serif text-xl italic">The Solstice Gallery</h3>
               </div>
             </div>
