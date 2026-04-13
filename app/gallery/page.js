@@ -123,6 +123,9 @@ const categories = [
         gallery: [
           '/levelstone/images/gallery/forest-satin-1.jpeg',
           '/levelstone/images/gallery/forest-satin-2.jpeg',
+          '/levelstone/images/IMG_2154.jpeg',
+          '/levelstone/images/IMG_2156.jpeg',
+          '/levelstone/images/IMG_2155.jpeg',
         ],
       },
       {
