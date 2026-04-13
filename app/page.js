@@ -74,9 +74,9 @@ export default function HomePage() {
           <div className="flex-1 flex flex-col gap-8 md:mt-24">
             <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-highest group rounded-lg">
               <img
-                alt="Architectural Concrete"
+                alt="The Solstice Gallery — polished concrete flooring in commercial space"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="/levelstone/images/IMG_1146.jpg"
+                src="/levelstone/images/DSC_3190.jpeg"
               />
               <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
                 <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Residential</p>
