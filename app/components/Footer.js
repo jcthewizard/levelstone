@@ -7,6 +7,7 @@ export default function Footer() {
       <div className="flex gap-8 md:gap-16 flex-wrap justify-center">
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/gallery">The Gallery</Link>
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/artistry">Our Artistry</Link>
+        <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/testimonials">Testimonials</Link>
         <Link className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/inquiries">Inquiries</Link>
         <a className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-black transition-colors duration-400" href="/levelstone/inquiries#faq">FAQ</a>
       </div>
