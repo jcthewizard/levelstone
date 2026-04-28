@@ -110,7 +110,7 @@ export default function InquiriesPage() {
             className="block aspect-[4/3] rounded-lg relative overflow-hidden group"
           >
             <img
-              src="/levelstone/image.png"
+              src="/image.png"
               alt="Map of Bellevue, WA office location"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

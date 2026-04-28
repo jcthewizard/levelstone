@@ -9,7 +9,7 @@ export default function HomePage() {
           <img
             alt="Luxury polished concrete flooring"
             className="w-full h-full object-cover"
-            src="/levelstone/images/cover3.jpg"
+            src="/images/cover3.jpg"
           />
           <div className="absolute inset-0 bg-black/15"></div>
         </div>
@@ -62,7 +62,7 @@ export default function HomePage() {
               <img
                 alt="Modern Living Room with Polished Floor"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="/levelstone/images/IMG_1001.jpeg"
+                src="/images/IMG_1001.jpeg"
               />
               <div className="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
                 <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-2">Commercial</p>
@@ -76,7 +76,7 @@ export default function HomePage() {
               <img
                 alt="The Solstice Gallery — polished concrete flooring in commercial space"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="/levelstone/images/DSC_3190.jpeg"
+                src="/images/DSC_3190.jpeg"
               />
               <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
                 <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Residential</p>
@@ -87,7 +87,7 @@ export default function HomePage() {
               <img
                 alt="Executive Office Floor"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="/levelstone/images/IMG_0198.jpeg"
+                src="/images/IMG_0198.jpeg"
               />
               <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full text-white">
                 <p className="font-label text-xs uppercase tracking-widest opacity-80 mb-1">Office</p>
